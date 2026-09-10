@@ -5,18 +5,18 @@ Aplicação web voltada para freelancers e pequenos empreendedores com renda var
 ---
  
 ## Arquitetura do projeto
- 
-Este projeto passou por uma evolução de arquitetura, documentada aqui de propósito para mostrar o processo de aprendizado:
- 
+Este projeto passou por três fases de arquitetura, documentadas aqui de propósito para mostrar o processo de aprendizado:
+
 | Versão | Stack | Pasta |
-|---|---|---|
+| ------ | ----- | ----- |
 | **Atual** | React (front-end) + **Node/Express + PostgreSQL** (back-end próprio, com autenticação JWT) | `front-end/` + `back-end/` |
-| **Anterior** | React (front-end) + **Firebase** (Firestore + Auth) | `front-end/` |
- 
-### Por que voltei para um back-end próprio?
- 
-Depois de usar o Firebase (Firestore + Authentication) como BaaS, migrei de volta para uma API própria em **Express + PostgreSQL** para ganhar experiência real com autenticação (JWT + bcrypt), modelagem relacional de dados e queries SQL — habilidades centrais para atuar como full stack developer, que o Firebase abstraía por completo.
- 
+| **Fase 2** | React (front-end) + **Firebase** (Firestore + Auth) | `front-end/` |
+| **Fase 1** | React (front-end) + **Node/Express + SQLite** (protótipo inicial, sem autenticação) | `front-end/` |
+
+### Por que essa evolução?
+
+Comecei com SQLite pra validar a lógica de negócio (cálculo de pró-labore, distribuição de valores) sem me preocupar com infraestrutura. Depois migrei pro Firebase (Firestore + Authentication) pra ter autenticação pronta e testar o front-end mais rápido, sem gerenciar back-end.
+Por fim, voltei pra uma API própria em **Express + PostgreSQL** pra ganhar experiência real com autenticação (JWT + bcrypt), modelagem relacional de dados e queries SQL — habilidades que o Firebase abstraía por completo e que são centrais pra atuar como full stack developer.
 Isso significa: cadastro/login com hash de senha (bcrypt), tokens JWT com expiração, rotas protegidas por middleware de autenticação, e transações vinculadas a cada usuário (com verificação de propriedade em todas as operações).
  
 ---
