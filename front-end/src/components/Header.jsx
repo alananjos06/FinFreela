@@ -5,6 +5,7 @@ export default function Header({ tab, setTab, user, onLogout }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef(null)
 
+  // Fecha o dropdown se clicar fora dele
   useEffect(() => {
     function handleClickOutside(e) {
       if (menuRef.current && !menuRef.current.contains(e.target)) {

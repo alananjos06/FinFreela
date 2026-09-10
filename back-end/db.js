@@ -37,7 +37,7 @@ const createTables = async () => {
         user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
         description VARCHAR(255) NOT NULL,
         amount NUMERIC(10, 2) NOT NULL,
-        type VARCHAR(50) NOT NULL CHECK (type IN ('entrada', 'saida')),
+        type VARCHAR(50) NOT NULL CHECK (type IN ('entrada', 'saída')),
         date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         category VARCHAR(100),
         month VARCHAR(20)

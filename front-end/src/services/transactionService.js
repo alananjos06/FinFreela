@@ -11,6 +11,11 @@ export const transactionService = {
     return response.data;
   },
 
+  async update(id, transactionData) {
+    const response = await api.put(`/transactions/${id}`, transactionData);
+    return response.data;
+  },
+
   async remove(id) {
     const response = await api.delete(`/transactions/${id}`);
     return response.data;

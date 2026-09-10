@@ -69,9 +69,13 @@ function cancelEdit() {
 
 function saveEdit(id) {
   if (!editForm.desc.trim() || !editForm.value) return
-  updateEntry(id, { 
-    desc: editForm.desc, 
-    value: parseFloat(editForm.value) 
+  const original = entries.find(e => e.id === id)
+  updateEntry(id, {
+    desc: editForm.desc,
+    value: parseFloat(editForm.value),
+    type: original.type,
+    category: original.category,
+    month: original.month,
   })
   cancelEdit()
 }

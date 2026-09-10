@@ -3,7 +3,7 @@ import Header from './components/Header.jsx'
 import Dashboard from './components/Dashboard.jsx'
 import Simulador from './components/Simulador.jsx'
 import { Login } from './components/Login.jsx'
-import { useAuth } from './hooks/useAuth.js'
+import { useAuth } from './hooks/AuthContext.jsx'
 import styles from './App.module.css'
 
 export default function App() {
